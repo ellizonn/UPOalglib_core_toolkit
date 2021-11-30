@@ -46,8 +46,9 @@ int eval_postfix(const char *expr, long *res)
         return 0;
     }
     
-    upo_stack_t stack = upo_stack_create();
     long int *num=NULL, *result=NULL;
+    upo_stack_t stack = upo_stack_create();
+    if (stack == NULL) abort();
 
     while (*expr != '\0')
     {
@@ -116,11 +117,11 @@ int eval_postfix(const char *expr, long *res)
     if (upo_stack_size(stack) == 1) {
         *res = *(long int*) upo_stack_top(stack);
         upo_stack_pop(stack, 1);
-        //upo_stack_destroy(stack, 1);
+        upo_stack_destroy(stack, 1);
         return 1;
     }
     else {
-        //upo_stack_destroy(stack, 1);
+        upo_stack_destroy(stack, 1);
         perror("Error: malformed expression");
         return 0;
     }
