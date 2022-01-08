@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "ratio": "c",
-        "postfix_eval.h": "c"
+        "postfix_eval.h": "c",
+        "cstring": "c"
     }
 }
