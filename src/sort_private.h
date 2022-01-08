@@ -49,5 +49,9 @@
  *
  */
 
+void upo_merge_sort_rec(void *base, size_t lo, size_t hi, size_t size, upo_sort_comparator_t cmp);
+void upo_merge(void *base, size_t lo, size_t mid, size_t hi, size_t size, upo_sort_comparator_t cmp);
+void upo_quick_sort_rec(void *base, size_t lo, size_t hi, size_t size, upo_sort_comparator_t cmp);
+size_t upo_quick_partition(void *base, size_t lo, size_t hi, size_t size, upo_sort_comparator_t cmp);
 
 #endif /* UPO_SORT_PRIVATE_H */
